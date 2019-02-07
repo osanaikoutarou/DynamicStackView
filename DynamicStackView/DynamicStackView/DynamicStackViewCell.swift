@@ -14,24 +14,60 @@ class DynamicStackViewCell: UIView {
     // optional
     var identifier: String?
     
-    var heightConstraint: NSLayoutConstraint?
+    // for vertical
+    var heightConstraint:NSLayoutConstraint?
     var height: CGFloat = 1.0 {
         didSet {
-            
+            if let heightConstraint = heightConstraint {
+                contentView.removeConstraint(heightConstraint)
+            }
             heightConstraint = contentView.heightAnchor.constraint(equalToConstant: height)
+            heightConstraint?.isActive = true
         }
     }
-    var automatic: Bool = false {
+    fileprivate var automaticHeight: Bool = false {
         didSet {
-            if let heightConstraint = heightConstraint, automatic {
-                removeConstraint(heightConstraint)
+            heightConstraint?.isActive = !automaticHeight
+        }
+    }
+    // for horizontal
+    var widthConstraint:NSLayoutConstraint?
+    var width: CGFloat = 1.0 {
+        didSet {
+            if let widthConstraint = widthConstraint {
+                contentView.removeConstraint(widthConstraint)
             }
-            if heightConstraint == nil && !automatic {
-                heightConstraint = contentView.heightAnchor.constraint(equalToConstant: height)
-            }
+            widthConstraint = contentView.widthAnchor.constraint(equalToConstant: width)
+            widthConstraint?.isActive = true
+        }
+    }
+    fileprivate var automaticWidth: Bool = false {
+        didSet {
+            widthConstraint?.isActive = !automaticWidth
         }
     }
     
+    var axis:NSLayoutConstraint.Axis = .vertical
+    
+    var automaticDimension: Bool {
+        get {
+            switch axis {
+            case .horizontal:
+                return automaticWidth
+            case .vertical:
+                return automaticHeight
+            }
+        }
+        set {
+            switch axis {
+            case .horizontal:
+                automaticWidth = newValue
+            case .vertical:
+                automaticHeight = newValue
+            }
+        }
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -58,12 +94,22 @@ class DynamicStackViewCell: UIView {
                 options: .directionLeadingToTrailing,
                 metrics: nil,
                 views: ["contentView": contentView]))
-        
         height = 1.0
+        width = 1.0
+    }
+    
+    func setAxis(axis: NSLayoutConstraint.Axis) {
+        self.axis = axis
+        // 不要な制約
+        switch axis {
+        case .horizontal:
+            automaticHeight = true
+        case .vertical:
+            automaticWidth = true
+        }
     }
 
     var view: DynamicStackViewCell {
-        
         return self
     }
 }

@@ -16,6 +16,9 @@
 		DA84DA83220BBC270036FE80 /* DynamicStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84DA82220BBC270036FE80 /* DynamicStackViewCell.swift */; };
 		DA84DA88220BC18F0036FE80 /* MyStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84DA87220BC18F0036FE80 /* MyStackViewCell.swift */; };
 		DA84DA8A220BC1960036FE80 /* MyStackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA84DA89220BC1960036FE80 /* MyStackViewCell.xib */; };
+		DA84DA8C220BE4F40036FE80 /* HorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84DA8B220BE4F40036FE80 /* HorizontalViewController.swift */; };
+		DA84DA8E220BE7790036FE80 /* RankingStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84DA8D220BE7790036FE80 /* RankingStackViewCell.swift */; };
+		DA84DA90220BE7830036FE80 /* RankingStackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA84DA8F220BE7830036FE80 /* RankingStackViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		DA84DA82220BBC270036FE80 /* DynamicStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStackViewCell.swift; sourceTree = "<group>"; };
 		DA84DA87220BC18F0036FE80 /* MyStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStackViewCell.swift; sourceTree = "<group>"; };
 		DA84DA89220BC1960036FE80 /* MyStackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyStackViewCell.xib; sourceTree = "<group>"; };
+		DA84DA8B220BE4F40036FE80 /* HorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViewController.swift; sourceTree = "<group>"; };
+		DA84DA8D220BE7790036FE80 /* RankingStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingStackViewCell.swift; sourceTree = "<group>"; };
+		DA84DA8F220BE7830036FE80 /* RankingStackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingStackViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 				DA84DA74220BBA040036FE80 /* Assets.xcassets */,
 				DA84DA76220BBA040036FE80 /* LaunchScreen.storyboard */,
 				DA84DA79220BBA040036FE80 /* Info.plist */,
+				DA84DA8B220BE4F40036FE80 /* HorizontalViewController.swift */,
 			);
 			path = DynamicStackView;
 			sourceTree = "<group>";
@@ -88,6 +95,8 @@
 			children = (
 				DA84DA87220BC18F0036FE80 /* MyStackViewCell.swift */,
 				DA84DA89220BC1960036FE80 /* MyStackViewCell.xib */,
+				DA84DA8D220BE7790036FE80 /* RankingStackViewCell.swift */,
+				DA84DA8F220BE7830036FE80 /* RankingStackViewCell.xib */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -154,6 +163,7 @@
 				DA84DA75220BBA040036FE80 /* Assets.xcassets in Resources */,
 				DA84DA73220BBA030036FE80 /* Main.storyboard in Resources */,
 				DA84DA8A220BC1960036FE80 /* MyStackViewCell.xib in Resources */,
+				DA84DA90220BE7830036FE80 /* RankingStackViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +177,9 @@
 				DA84DA81220BBA1C0036FE80 /* DynamicStackView.swift in Sources */,
 				DA84DA70220BBA030036FE80 /* ViewController.swift in Sources */,
 				DA84DA88220BC18F0036FE80 /* MyStackViewCell.swift in Sources */,
+				DA84DA8E220BE7790036FE80 /* RankingStackViewCell.swift in Sources */,
 				DA84DA6E220BBA030036FE80 /* AppDelegate.swift in Sources */,
+				DA84DA8C220BE4F40036FE80 /* HorizontalViewController.swift in Sources */,
 				DA84DA83220BBC270036FE80 /* DynamicStackViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

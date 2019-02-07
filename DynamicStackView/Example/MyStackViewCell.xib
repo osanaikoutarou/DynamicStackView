@@ -21,6 +21,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Asx-3W-uwf">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gru-8q-hmM">
                     <rect key="frame" x="10" y="10" width="40" height="40"/>
                     <constraints>
@@ -50,12 +54,16 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cGo-En-CQ1" secondAttribute="trailing" constant="10" id="A3h-qP-j4d"/>
                 <constraint firstItem="cGo-En-CQ1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D1v-FJ-amv"/>
+                <constraint firstItem="Asx-3W-uwf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="EuZ-ea-lZL"/>
                 <constraint firstItem="gru-8q-hmM" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="VNP-K2-rSO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="up7-i1-fPp" secondAttribute="bottom" constant="10" id="W2c-mw-Nz9"/>
                 <constraint firstItem="up7-i1-fPp" firstAttribute="leading" secondItem="gru-8q-hmM" secondAttribute="trailing" constant="10" id="Y5d-Op-BvC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="up7-i1-fPp" secondAttribute="trailing" constant="100" id="ZMa-bN-oDf"/>
+                <constraint firstAttribute="bottom" secondItem="Asx-3W-uwf" secondAttribute="bottom" id="a7g-k6-mQZ"/>
                 <constraint firstItem="gru-8q-hmM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="aUN-2n-6RF"/>
                 <constraint firstItem="up7-i1-fPp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="ae0-Hj-z9f"/>
+                <constraint firstItem="Asx-3W-uwf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eaG-ns-b60"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Asx-3W-uwf" secondAttribute="trailing" id="lyH-ci-nvN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gru-8q-hmM" secondAttribute="bottom" constant="10" id="nCh-IV-dOM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

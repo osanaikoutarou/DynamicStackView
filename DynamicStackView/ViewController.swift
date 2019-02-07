@@ -18,7 +18,8 @@ class ViewController: UIViewController {
 
     @IBAction func tappedAdd1(_ sender: Any) {
         let cell = MyStackViewCell(image: UIImage(named: "sweets_icecream_3dan")!, text: "アイス")
-        cell.automatic = true
+        cell.setAxis(axis: .vertical)
+        cell.automaticDimension = true
         cell.closeAction = {
             self.dynamicStackView.removeCell(cell: cell)
         }
@@ -26,7 +27,8 @@ class ViewController: UIViewController {
     }
     @IBAction func tappedAdd2(_ sender: Any) {
         let cell = MyStackViewCell(image: UIImage(named: "character_turtle_oyako_mago")!, text: "かめ")
-        cell.automatic = true
+        cell.setAxis(axis: .vertical)
+        cell.automaticDimension = true
         cell.closeAction = {
             self.dynamicStackView.removeCell(cell: cell)
         }
@@ -34,7 +36,8 @@ class ViewController: UIViewController {
     }
     @IBAction func tappedAdd3(_ sender: Any) {
         let cell = MyStackViewCell(image: UIImage(named: "snowman_yukidaruma_sandan")!, text: "スノーマン")
-        cell.automatic = true
+        cell.setAxis(axis: .vertical)
+        cell.automaticDimension = true
         cell.closeAction = {
             self.dynamicStackView.removeCell(cell: cell)
         }

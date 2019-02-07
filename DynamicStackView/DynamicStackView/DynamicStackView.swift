@@ -12,9 +12,6 @@ class DynamicStackView: UIStackView {
     var cells:[DynamicStackViewCell] = []
     
     func addCell(cell:DynamicStackViewCell) {
-        addCell(cell: cell, identifier: NSUUID().uuidString)
-    }
-    func addCell(cell:DynamicStackViewCell, identifier:String) {
         self.addArrangedSubview(cell)
         cells.append(cell)
     }
