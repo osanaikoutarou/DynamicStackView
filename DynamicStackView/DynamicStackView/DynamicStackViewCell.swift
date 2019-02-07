@@ -11,9 +11,13 @@ import UIKit
 class DynamicStackViewCell: UIView {
     var contentView: UIView!
     
+    // optional
+    var identifier: String?
+    
     var heightConstraint: NSLayoutConstraint?
     var height: CGFloat = 1.0 {
         didSet {
+            
             heightConstraint = contentView.heightAnchor.constraint(equalToConstant: height)
         }
     }

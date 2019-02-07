@@ -18,35 +18,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="arO-Ly-VDe" customClass="DynamicStackView" customModule="DynamicStackView" customModuleProvider="target">
-                                <rect key="frame" x="10" y="120" width="355" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" priority="1" constant="1" id="GWf-xb-a0Q"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5V-cf-i24">
-                                <rect key="frame" x="259" y="41" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5V-cf-i24">
+                                <rect key="frame" x="10" y="41" width="78" height="30"/>
                                 <state key="normal" title="Add Button"/>
                                 <connections>
                                     <action selector="tappedAdd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="klG-MW-jJa"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y69-8u-eTh">
+                                <rect key="frame" x="10" y="100" width="349" height="547"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-re-E0O" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="1"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nGr-K1-IsL" customClass="DynamicStackView" customModule="DynamicStackView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="349" height="1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" priority="1" constant="1" id="17X-q2-2U1"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="nGr-K1-IsL" firstAttribute="top" secondItem="0pm-re-E0O" secondAttribute="top" id="HNW-il-kaL"/>
+                                            <constraint firstAttribute="bottom" secondItem="nGr-K1-IsL" secondAttribute="bottom" id="TlO-U4-5aq"/>
+                                            <constraint firstAttribute="trailing" secondItem="nGr-K1-IsL" secondAttribute="trailing" id="e2q-oW-wlS"/>
+                                            <constraint firstItem="nGr-K1-IsL" firstAttribute="leading" secondItem="0pm-re-E0O" secondAttribute="leading" id="fc7-wn-pph"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="0pm-re-E0O" secondAttribute="bottom" id="3zO-dD-g4P"/>
+                                    <constraint firstItem="0pm-re-E0O" firstAttribute="leading" secondItem="Y69-8u-eTh" secondAttribute="leading" id="Onl-ca-bUd"/>
+                                    <constraint firstItem="0pm-re-E0O" firstAttribute="top" secondItem="Y69-8u-eTh" secondAttribute="top" id="VQP-OO-vVK"/>
+                                    <constraint firstAttribute="trailing" secondItem="0pm-re-E0O" secondAttribute="trailing" id="VzV-8j-M9o"/>
+                                    <constraint firstItem="0pm-re-E0O" firstAttribute="width" secondItem="Y69-8u-eTh" secondAttribute="width" id="gWB-BC-7Xz"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8e-Cq-2UY">
+                                <rect key="frame" x="98" y="41" width="105" height="30"/>
+                                <state key="normal" title="Remove Button"/>
+                                <connections>
+                                    <action selector="tappedRemove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UVa-Ad-pMQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="arO-Ly-VDe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="HLJ-uv-JVr"/>
-                            <constraint firstItem="arO-Ly-VDe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="tve-d8-KwW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="arO-Ly-VDe" secondAttribute="trailing" constant="10" id="zgU-76-n0V"/>
+                            <constraint firstAttribute="bottom" secondItem="Y69-8u-eTh" secondAttribute="bottom" constant="20" symbolic="YES" id="N5v-We-lcv"/>
+                            <constraint firstItem="Y69-8u-eTh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="Oip-3y-cGe"/>
+                            <constraint firstItem="Y69-8u-eTh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ed0-0d-fxV"/>
+                            <constraint firstItem="Y69-8u-eTh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jCf-yB-fpT"/>
+                            <constraint firstItem="l5V-cf-i24" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="koL-dn-FED"/>
+                            <constraint firstItem="l5V-cf-i24" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="qTF-bT-DOe"/>
+                            <constraint firstItem="O8e-Cq-2UY" firstAttribute="leading" secondItem="l5V-cf-i24" secondAttribute="trailing" constant="10" id="wNU-aQ-Erp"/>
+                            <constraint firstItem="O8e-Cq-2UY" firstAttribute="centerY" secondItem="l5V-cf-i24" secondAttribute="centerY" id="xYz-Y1-Qcp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="dynamicStackView" destination="arO-Ly-VDe" id="dyq-I1-XAY"/>
+                        <outlet property="dynamicStackView" destination="nGr-K1-IsL" id="fSv-CC-XZQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="40.799999999999997" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

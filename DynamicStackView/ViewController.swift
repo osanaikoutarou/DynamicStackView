@@ -22,5 +22,8 @@ class ViewController: UIViewController {
         dynamicStackView.addCell(cell: cell)
     }
     
+    @IBAction func tappedRemove(_ sender: Any) {
+        dynamicStackView.removeLastCell()
+    }
 }
 
