@@ -33,16 +33,12 @@ class ViewController: UIViewController {
         dynamicStackView.addCell(cell: cell)
     }
     @IBAction func tappedAdd3(_ sender: Any) {
-                print("a")
         let cell = MyStackViewCell(image: UIImage(named: "snowman_yukidaruma_sandan")!, text: "スノーマン")
         cell.automatic = true
-                print("|")
         cell.closeAction = {
             self.dynamicStackView.removeCell(cell: cell)
         }
-                print("_")
         dynamicStackView.addCell(cell: cell)
-        print(".")
     }
     
     @IBAction func tappedRemove(_ sender: Any) {
