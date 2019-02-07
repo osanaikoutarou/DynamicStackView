@@ -11,10 +11,15 @@ import UIKit
 class MyStackViewCell: DynamicStackViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
+    
+    var closeAction:(() -> Void)?
 
     convenience init(image: UIImage, text: String) {
         self.init(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         imageView.image = image
         label.text = text
+    }
+    @IBAction func tappedClose(_ sender: Any) {
+        closeAction?()
     }
 }

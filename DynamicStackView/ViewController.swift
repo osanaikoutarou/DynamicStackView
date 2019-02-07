@@ -16,10 +16,33 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func tappedAdd(_ sender: Any) {
+    @IBAction func tappedAdd1(_ sender: Any) {
         let cell = MyStackViewCell(image: UIImage(named: "sweets_icecream_3dan")!, text: "アイス")
         cell.automatic = true
+        cell.closeAction = {
+            self.dynamicStackView.removeCell(cell: cell)
+        }
         dynamicStackView.addCell(cell: cell)
+    }
+    @IBAction func tappedAdd2(_ sender: Any) {
+        let cell = MyStackViewCell(image: UIImage(named: "character_turtle_oyako_mago")!, text: "かめ")
+        cell.automatic = true
+        cell.closeAction = {
+            self.dynamicStackView.removeCell(cell: cell)
+        }
+        dynamicStackView.addCell(cell: cell)
+    }
+    @IBAction func tappedAdd3(_ sender: Any) {
+                print("a")
+        let cell = MyStackViewCell(image: UIImage(named: "snowman_yukidaruma_sandan")!, text: "スノーマン")
+        cell.automatic = true
+                print("|")
+        cell.closeAction = {
+            self.dynamicStackView.removeCell(cell: cell)
+        }
+                print("_")
+        dynamicStackView.addCell(cell: cell)
+        print(".")
     }
     
     @IBAction func tappedRemove(_ sender: Any) {

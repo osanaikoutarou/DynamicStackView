@@ -36,6 +36,13 @@ class DynamicStackView: UIStackView {
             cells.remove(at: index)
         }
     }
+    func removeCell(cell:DynamicStackViewCell) {
+        if let index = cells.index(of: cell) {
+            self.removeArrangedSubview(cell)
+            cell.removeFromSuperview()
+            cells.remove(at: index)
+        }
+    }
     func removeLastCell() {
         if cells.count > 0 {
             removeCell(index: cells.count - 1)

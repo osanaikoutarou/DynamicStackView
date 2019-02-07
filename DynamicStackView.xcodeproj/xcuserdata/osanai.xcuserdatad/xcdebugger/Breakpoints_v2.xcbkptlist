@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DynamicStackView/DynamicStackView/DynamicStackView.swift"
-            timestampString = "571200206.574005"
+            timestampString = "571204412.3903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "addCell(cell:identifier:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "removeCell(index:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
