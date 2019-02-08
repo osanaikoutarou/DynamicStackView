@@ -15,9 +15,6 @@ class RankingStackViewCell: DynamicHorizontalStackViewCell {
     
     convenience init(rank:Int) {
         self.init(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-        
-        imageView.layer.cornerRadius = imageView.frame.width/2.0
-        imageView.clipsToBounds = true
         label.text = String(rank)
     }
 

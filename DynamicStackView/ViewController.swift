@@ -11,9 +11,14 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var dynamicStackView: DynamicStackView!
+    @IBOutlet weak var header: DynamicVerticalStackViewCell!
+    @IBOutlet weak var footer: DynamicVerticalStackViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dynamicStackView.addHeader(header: header)
+        dynamicStackView.addFooter(footer: footer)
     }
 
     @IBAction func tappedAdd1(_ sender: Any) {

@@ -9,29 +9,52 @@
 import UIKit
 
 class DynamicStackView: UIStackView {
+    
+    private var header: DynamicStackViewCell?
+    private var footer: DynamicStackViewCell?
+    var existHeader:Bool {
+        return header != nil
+    }
+    var existFooter:Bool {
+        return footer != nil
+    }
+
     var cells:[DynamicStackViewCell] {
         return self.arrangedSubviews as! [DynamicStackViewCell]
     }
+    var cellsCountWithoutHeaderFooter:Int {
+        return cells.count - (existHeader ? 1 : 0) - (existFooter ? 1 : 0)
+    }
     
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
+        removeAll()
+    }
+    
+    // Add
     func addCell(cell:DynamicStackViewCell) {
-        self.addArrangedSubview(cell)
+        insertLastCell(cell: cell)
     }
-    
-    func indexes(of cell:DynamicStackViewCell) -> [Int] {
-        let equalCells = cells.filter { $0 == cell }
-        let indexes = equalCells.map { cells.index(of: $0)! }
-        return indexes
+    // Insert
+    func insertCell(cell:DynamicStackViewCell, at index:Int) {
+        let offset = existHeader ? 1 : 0
+        insertArrangedSubview(cell, at: index + offset)
     }
-    func index(of cell:DynamicStackViewCell) -> Int? {
-        return indexes(of: cell).first
+    func insertLastCell(cell:DynamicStackViewCell) {
+        let offset = existFooter ? 1 : 0
+        insertArrangedSubview(cell, at: cells.count - offset)
     }
-    
-    func removeCell(index:Int) {
+    // Remove
+    private func remove(index:Int) {
         if cells.count > index {
             let cell = cells[index]
             self.removeArrangedSubview(cell)
             cell.removeFromSuperview()
         }
+    }
+    func removeCell(index:Int) {
+        let offset = existHeader ? 1 : 0
+        remove(index: index + offset)
     }
     func removeCell(cell:DynamicStackViewCell) {
         if cells.index(of: cell) != nil {
@@ -40,18 +63,55 @@ class DynamicStackView: UIStackView {
         }
     }
     func removeLastCell() {
-        if cells.count > 0 {
-            removeCell(index: cells.count - 1)
+        if cellsCountWithoutHeaderFooter < 1 {
+            return
         }
+        let offset = existFooter ? 1 : 0
+        remove(index: cells.count - 1 - offset)
     }
-    func removeAll() {
-        for i in 0..<cells.count {
+    func removeAllCells() {
+        for i in (existHeader ? 1 : 0)..<cellsCountWithoutHeaderFooter {
             removeCell(index: i)
         }
     }
-    func insertCell(cell:DynamicStackViewCell, at index:Int) {
-        insertArrangedSubview(cell, at: index)
+    func removeAll() {
+        self.arrangedSubviews.forEach {
+            self.removeArrangedSubview($0)
+            $0.removeFromSuperview()
+        }
     }
+    // Index
+    func indexes(of cell:DynamicStackViewCell) -> [Int] {
+        let equalCells = cells.filter { $0 == cell }
+        let indexes = equalCells.map { cells.index(of: $0)! }
+        return indexes
+    }
+    func index(of cell:DynamicStackViewCell) -> Int? {
+        return indexes(of: cell).first
+    }
+    // header/footer
+    func addHeader(header:DynamicStackViewCell) {
+        insertCell(cell: header, at: 0)
+        self.header = header
+    }
+    func removeHeader() {
+        if existHeader {
+            removeCell(index: 0)
+            header = nil
+        }
+    }
+    func addFooter(footer:DynamicStackViewCell) {
+        removeFooter()
+        addCell(cell: footer)
+        self.footer = footer
+    }
+    func removeFooter() {
+        if existFooter {
+            removeLastCell()
+            footer = nil
+        }
+    }
+    
 }
 
 extension DynamicStackView {

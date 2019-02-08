@@ -60,10 +60,46 @@
                                 <rect key="frame" x="10" y="144" width="349" height="523"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-re-E0O" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="349" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nGr-K1-IsL" customClass="DynamicStackView" customModule="DynamicStackView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="349" height="1"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-AM-IYZ" customClass="DynamicVerticalStackViewCell" customModule="DynamicStackView" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="へっだー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRR-dU-RLF">
+                                                                <rect key="frame" x="139" y="40" width="70" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.063481707129999995" green="1" blue="0.9062076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="qTc-gs-b3d"/>
+                                                        </constraints>
+                                                        <viewLayoutGuide key="safeArea" id="7Gt-GJ-cI6"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kH2-po-2zp" customClass="DynamicVerticalStackViewCell" customModule="DynamicStackView" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="100" width="349" height="100"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ふったー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edf-H9-KgL">
+                                                                <rect key="frame" x="139" y="40" width="70" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.063481707129999995" green="1" blue="0.9062076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="OjY-At-pqz"/>
+                                                        </constraints>
+                                                        <viewLayoutGuide key="safeArea" id="jC3-Yz-KvL"/>
+                                                    </view>
+                                                </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="1" constant="1" id="17X-q2-2U1"/>
                                                 </constraints>
@@ -134,6 +170,8 @@
                     </view>
                     <connections>
                         <outlet property="dynamicStackView" destination="nGr-K1-IsL" id="fSv-CC-XZQ"/>
+                        <outlet property="footer" destination="kH2-po-2zp" id="dxs-UQ-2aX"/>
+                        <outlet property="header" destination="GDg-AM-IYZ" id="253-mK-MaR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

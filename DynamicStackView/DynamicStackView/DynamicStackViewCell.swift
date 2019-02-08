@@ -19,7 +19,7 @@ class DynamicVerticalStackViewCell: DynamicStackViewCell {
             heightConstraint?.isActive = true
         }
     }
-    var automaticDimension: Bool = false {
+    override var automaticDimension: Bool {
         didSet {
             heightConstraint?.isActive = !automaticDimension
         }
@@ -37,7 +37,7 @@ class DynamicHorizontalStackViewCell: DynamicStackViewCell {
             widthConstraint?.isActive = true
         }
     }
-    var automaticDimension: Bool = false {
+    override var automaticDimension: Bool {
         didSet {
             widthConstraint?.isActive = !automaticDimension
         }
@@ -50,13 +50,22 @@ class DynamicStackViewCell: UIView {
     // optional
     var identifier: String?
     
+    var automaticDimension: Bool = false
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        print("awakefromnib")
+        
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
+        print("init frame")
         commonInit()
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
+        print("init coder")
+//        commonInit()
     }
     private func commonInit() {
         let className = String(describing: type(of: self))
@@ -76,6 +85,8 @@ class DynamicStackViewCell: UIView {
                 options: .directionLeadingToTrailing,
                 metrics: nil,
                 views: ["contentView": contentView]))
+        
+        automaticDimension = true
     }
 
     var view: DynamicStackViewCell {
