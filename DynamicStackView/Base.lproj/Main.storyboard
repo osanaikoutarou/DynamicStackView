@@ -60,12 +60,12 @@
                                 <rect key="frame" x="10" y="144" width="349" height="523"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-re-E0O" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="230"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nGr-K1-IsL" customClass="DynamicStackView" customModule="DynamicStackView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="349" height="230"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-AM-IYZ" customClass="DynamicVerticalStackViewCell" customModule="DynamicStackView" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-AM-IYZ" customClass="DynamicVerticalStackViewHeader" customModule="DynamicStackView" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="349" height="100"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="へっだー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRR-dU-RLF">
@@ -82,8 +82,25 @@
                                                         </constraints>
                                                         <viewLayoutGuide key="safeArea" id="7Gt-GJ-cI6"/>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kH2-po-2zp" customClass="DynamicVerticalStackViewCell" customModule="DynamicStackView" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="100" width="349" height="100"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coA-40-x4t" customClass="DynamicVerticalStackViewCell" customModule="DynamicStackView" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="100" width="349" height="30"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="なんでもないView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhz-UI-6hv">
+                                                                <rect key="frame" x="104" y="5" width="141" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="mhz-UI-6hv" firstAttribute="centerY" secondItem="coA-40-x4t" secondAttribute="centerY" id="11g-mZ-Uuz"/>
+                                                            <constraint firstAttribute="height" constant="30" id="h5f-Af-iQ4"/>
+                                                            <constraint firstItem="mhz-UI-6hv" firstAttribute="centerX" secondItem="coA-40-x4t" secondAttribute="centerX" id="uNo-LX-ufN"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kH2-po-2zp" customClass="DynamicVerticalStackViewFooter" customModule="DynamicStackView" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="130" width="349" height="100"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ふったー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edf-H9-KgL">
                                                                 <rect key="frame" x="139" y="40" width="70" height="21"/>

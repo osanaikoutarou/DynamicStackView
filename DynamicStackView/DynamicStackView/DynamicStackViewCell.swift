@@ -8,6 +8,15 @@
 
 import UIKit
 
+class DynamicVerticalStackViewHeader: DynamicVerticalStackViewCell {
+}
+class DynamicVerticalStackViewFooter: DynamicVerticalStackViewCell {
+}
+class DynamicHorizontalStackViewHeader: DynamicHorizontalStackViewCell {
+}
+class DynamicHorizontalStackViewFooter: DynamicHorizontalStackViewCell {
+}
+
 class DynamicVerticalStackViewCell: DynamicStackViewCell {
     var heightConstraint:NSLayoutConstraint?
     var height: CGFloat = 1.0 {
@@ -49,6 +58,13 @@ class DynamicStackViewCell: UIView {
     
     // optional
     var identifier: String?
+    
+    var isHeader: Bool {
+        return self is DynamicVerticalStackViewHeader || self is DynamicHorizontalStackViewHeader
+    }
+    var isFooter: Bool {
+        return self is DynamicVerticalStackViewFooter || self is DynamicHorizontalStackViewFooter
+    }
     
     var automaticDimension: Bool = false
     

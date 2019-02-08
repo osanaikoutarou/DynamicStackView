@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dynamicStackView.addHeader(header: header)
-        dynamicStackView.addFooter(footer: footer)
+//        dynamicStackView.addHeader(header: header)
+//        dynamicStackView.addFooter(footer: footer)
     }
 
     @IBAction func tappedAdd1(_ sender: Any) {

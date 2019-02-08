@@ -28,7 +28,13 @@ class DynamicStackView: UIStackView {
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        removeAll()
+//        removeAll()
+        if cells.count > 0 , let cell = cells.first , cell.isHeader {
+            self.header = cell
+        }
+        if cells.count > 0 , let cell = cells.last , cell.isFooter {
+            self.footer = cell
+        }
     }
     
     // Add
