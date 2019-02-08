@@ -159,7 +159,7 @@
                                 <rect key="frame" x="261" y="140" width="84" height="30"/>
                                 <state key="normal" title="RemoveLast"/>
                                 <connections>
-                                    <action selector="tappedRemoveLast:" destination="XkA-Th-rEI" eventType="touchUpInside" id="NBf-1Q-TfB"/>
+                                    <action selector="tappedRmoveLast:" destination="XkA-Th-rEI" eventType="touchUpInside" id="SZ4-sS-hGp"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XH6-cL-2QQ">

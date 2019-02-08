@@ -9,11 +9,12 @@
 import UIKit
 
 class DynamicStackView: UIStackView {
-    var cells:[DynamicStackViewCell] = []
+    var cells:[DynamicStackViewCell] {
+        return self.arrangedSubviews as! [DynamicStackViewCell]
+    }
     
     func addCell(cell:DynamicStackViewCell) {
         self.addArrangedSubview(cell)
-        cells.append(cell)
     }
     
     func indexes(of cell:DynamicStackViewCell) -> [Int] {
@@ -30,14 +31,12 @@ class DynamicStackView: UIStackView {
             let cell = cells[index]
             self.removeArrangedSubview(cell)
             cell.removeFromSuperview()
-            cells.remove(at: index)
         }
     }
     func removeCell(cell:DynamicStackViewCell) {
-        if let index = cells.index(of: cell) {
+        if cells.index(of: cell) != nil {
             self.removeArrangedSubview(cell)
             cell.removeFromSuperview()
-            cells.remove(at: index)
         }
     }
     func removeLastCell() {
@@ -49,6 +48,9 @@ class DynamicStackView: UIStackView {
         for i in 0..<cells.count {
             removeCell(index: i)
         }
+    }
+    func insertCell(cell:DynamicStackViewCell, at index:Int) {
+        insertArrangedSubview(cell, at: index)
     }
 }
 

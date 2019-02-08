@@ -18,8 +18,10 @@ class HorizontalViewController: UIViewController {
 
     @IBAction func tappedAdd(_ sender: Any) {
         let cell = RankingStackViewCell(rank: dynamicStackView.cells.count + 1)
-        cell.setAxis(axis: .horizontal)
         cell.width = 100.0
         dynamicStackView.addCell(cell: cell)
+    }
+    @IBAction func tappedRmoveLast(_ sender: Any) {
+        dynamicStackView.removeLastCell()
     }
 }

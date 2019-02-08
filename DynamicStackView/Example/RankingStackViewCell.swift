@@ -8,23 +8,17 @@
 
 import UIKit
 
-class RankingStackViewCell: DynamicStackViewCell {
+class RankingStackViewCell: DynamicHorizontalStackViewCell {
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
-    var rank:Int = 0 {
-        didSet {
-            label.text = String(rank)
-        }
-    }
     
     convenience init(rank:Int) {
         self.init(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
         
         imageView.layer.cornerRadius = imageView.frame.width/2.0
         imageView.clipsToBounds = true
-        self.rank = rank
+        label.text = String(rank)
     }
 
 }

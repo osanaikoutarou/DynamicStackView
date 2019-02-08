@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyStackViewCell: DynamicStackViewCell {
+class MyStackViewCell: DynamicVerticalStackViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     
