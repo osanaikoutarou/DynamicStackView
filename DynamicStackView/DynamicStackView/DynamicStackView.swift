@@ -25,6 +25,7 @@ class DynamicStackView: UIStackView {
     var cellsCountWithoutHeaderFooter:Int {
         return cells.count - (existHeader ? 1 : 0) - (existFooter ? 1 : 0)
     }
+    private var copyedCells:[DynamicStackViewCell] = []
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
@@ -115,6 +116,24 @@ class DynamicStackView: UIStackView {
         if existFooter {
             removeLastCell()
             footer = nil
+        }
+    }
+    // hide
+    func hideCellsTo(num:Int, animationDuration:CGFloat) {
+        if self.cells.count < num {
+            return
+        }
+        
+        UIView.animate(withDuration: TimeInterval(animationDuration)) {
+            for i in num..<self.cells.count {
+                self.cells[i].isHidden = true
+            }
+        }
+    }
+    func showAllCell(animationDuration:CGFloat) {
+        UIView.animate(withDuration: TimeInterval(animationDuration)) {
+            self.cells.forEach { $0.isHidden = false }
+            self.layoutIfNeeded()
         }
     }
     

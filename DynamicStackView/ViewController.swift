@@ -49,5 +49,11 @@ class ViewController: UIViewController {
     @IBAction func tappedRemove(_ sender: Any) {
         dynamicStackView.removeLastCell()
     }
+    @IBAction func tappedHide(_ sender: Any) {
+        dynamicStackView.hideCellsTo(num: 3, animationDuration: 0.3)
+    }
+    @IBAction func tappedShow(_ sender: Any) {
+        dynamicStackView.showAllCell(animationDuration: 0.3)
+    }
 }
 
