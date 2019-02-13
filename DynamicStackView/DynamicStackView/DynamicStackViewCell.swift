@@ -85,27 +85,43 @@ class DynamicStackViewCell: UIView {
     }
     private func commonInit() {
         let className = String(describing: type(of: self))
-        contentView = Bundle.main.loadNibNamed(className, owner: self, options: nil)?.first as? UIView
+        if (Bundle.main.path(forResource: className, ofType: "nib") != nil) {
+            if let bundles = Bundle.main.loadNibNamed(className, owner: self, options: nil), let view = bundles.first as? UIView {
+                contentView = view
+                contentView.frame = self.frame
+            }
+        }
+        else {
+            //TODO:これ上手くいかない
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+            view.backgroundColor = .clear
+            contentView = view
+        }
         addSubview(contentView)
-        contentView.frame = self.frame
         
-        self.addConstraints(
-            NSLayoutConstraint.constraints(
-                withVisualFormat: "H:|-0-[contentView]-0-|",
-                options: .directionLeadingToTrailing,
-                metrics: nil,
-                views: ["contentView": contentView]))
-        self.addConstraints(
-            NSLayoutConstraint.constraints(
-                withVisualFormat: "V:|-0-[contentView]-0-|",
-                options: .directionLeadingToTrailing,
-                metrics: nil,
-                views: ["contentView": contentView]))
+        contentView.bindFrameToSuperviewBounds()
         
         automaticDimension = true
     }
 
     var view: DynamicStackViewCell {
         return self
+    }
+}
+
+extension UIView {
+    
+    func bindFrameToSuperviewBounds() {
+        guard let superview = self.superview else {
+            print("Error! `superview` was nil – call `addSubview(view: UIView)` before calling `bindFrameToSuperviewBounds()` to fix this.")
+            return
+        }
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.topAnchor.constraint(equalTo: superview.topAnchor, constant: 0).isActive = true
+        self.bottomAnchor.constraint(equalTo: superview.bottomAnchor, constant: 0).isActive = true
+        self.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 0).isActive = true
+        self.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: 0).isActive = true
+        
     }
 }

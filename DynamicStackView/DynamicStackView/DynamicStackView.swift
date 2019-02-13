@@ -29,6 +29,14 @@ class DynamicStackView: UIStackView {
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
+        
+        self.arrangedSubviews.forEach {
+            if !($0 is DynamicStackViewCell) {
+                self.removeArrangedSubview($0)
+                $0.removeFromSuperview()
+            }
+        }
+
 //        removeAll()
         if cells.count > 0 , let cell = cells.first , cell.isHeader {
             self.header = cell
@@ -36,6 +44,15 @@ class DynamicStackView: UIStackView {
         if cells.count > 0 , let cell = cells.last , cell.isFooter {
             self.footer = cell
         }
+        
+        addTerminalView()
+    }
+    
+    func addTerminalView() {
+        let view = DynamicVerticalStackViewCell(frame: .zero)
+        view.height = 10
+        view.backgroundColor = .white
+        insertLastView(view: view)
     }
     
     // Add
@@ -50,6 +67,9 @@ class DynamicStackView: UIStackView {
     func insertLastCell(cell:DynamicStackViewCell) {
         let offset = existFooter ? 1 : 0
         insertArrangedSubview(cell, at: cells.count - offset)
+    }
+    func insertLastView(view:DynamicStackViewCell) {
+        insertArrangedSubview(view, at: cells.count)
     }
     // Remove
     private func remove(index:Int) {
@@ -118,7 +138,7 @@ class DynamicStackView: UIStackView {
             footer = nil
         }
     }
-    // hide
+    // hide/show
     func hideCellsTo(num:Int, animationDuration:CGFloat) {
         if self.cells.count < num {
             return
@@ -142,5 +162,24 @@ class DynamicStackView: UIStackView {
 extension DynamicStackView {
     func cell(with identifier:String) -> DynamicStackViewCell? {
         return cells.first { $0.identifier == identifier }
+    }
+}
+
+extension UIStackView {
+    func expectedHeight() -> CGFloat {
+        return self.arrangedSubviews.filter { !$0.isHidden }.reduce(0, { $0 + $1.frame.height })
+    }
+}
+
+extension UIStackView {
+    func expectedHeight(when viewOfIndex:Int, isHidden:Bool) -> CGFloat {
+        var height = arrangedSubviews.filter { !$0.isHidden }.reduce(0, { $0 + $1.frame.height })
+        if isHidden && !arrangedSubviews[viewOfIndex].isHidden {
+            return height - arrangedSubviews[viewOfIndex].frame.height
+        }
+        if !isHidden && arrangedSubviews[viewOfIndex].isHidden {
+            return height + arrangedSubviews[viewOfIndex].frame.height
+        }
+        return height
     }
 }
