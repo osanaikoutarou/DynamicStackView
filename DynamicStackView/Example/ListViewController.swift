@@ -32,7 +32,8 @@ extension ListViewController: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StackTableViewCell", for: indexPath) as! StackTableViewCell
         cell.tappedAction = {
             tableView.beginUpdates()
-            cell.bottomView.isHidden = !cell.bottomView.isHidden
+//            cell.bottomView.isHidden = !cell.bottomView.isHidden
+            cell.heightConstraint.constant = 50
             tableView.endUpdates()
         }
         return cell

@@ -12,6 +12,7 @@ class StackTableViewCell: UITableViewCell {
     
     @IBOutlet weak var topVIew: UIView!
     @IBOutlet weak var bottomView: UIView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     var tappedAction:(() -> Void)?
     
