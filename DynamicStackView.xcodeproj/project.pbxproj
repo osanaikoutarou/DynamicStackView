@@ -19,6 +19,8 @@
 		DA84DA8C220BE4F40036FE80 /* HorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84DA8B220BE4F40036FE80 /* HorizontalViewController.swift */; };
 		DA84DA8E220BE7790036FE80 /* RankingStackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA84DA8D220BE7790036FE80 /* RankingStackViewCell.swift */; };
 		DA84DA90220BE7830036FE80 /* RankingStackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA84DA8F220BE7830036FE80 /* RankingStackViewCell.xib */; };
+		DA8AAD89221645D300FB0264 /* Sample5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AAD88221645D300FB0264 /* Sample5ViewController.swift */; };
+		DA8AAD8D2216943100FB0264 /* Sample6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8AAD8C2216943100FB0264 /* Sample6ViewController.swift */; };
 		DAD5B3A42213A7480037AC8A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B3A32213A7480037AC8A /* ListViewController.swift */; };
 		DAD5B3A62213A8A70037AC8A /* StackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B3A52213A8A70037AC8A /* StackTableViewCell.swift */; };
 		DAD5B3A82213AEAB0037AC8A /* List2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5B3A72213AEAA0037AC8A /* List2ViewController.swift */; };
@@ -46,6 +48,8 @@
 		DA84DA8B220BE4F40036FE80 /* HorizontalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViewController.swift; sourceTree = "<group>"; };
 		DA84DA8D220BE7790036FE80 /* RankingStackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingStackViewCell.swift; sourceTree = "<group>"; };
 		DA84DA8F220BE7830036FE80 /* RankingStackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingStackViewCell.xib; sourceTree = "<group>"; };
+		DA8AAD88221645D300FB0264 /* Sample5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample5ViewController.swift; sourceTree = "<group>"; };
+		DA8AAD8C2216943100FB0264 /* Sample6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample6ViewController.swift; sourceTree = "<group>"; };
 		DAD5B3A32213A7480037AC8A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DAD5B3A52213A8A70037AC8A /* StackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTableViewCell.swift; sourceTree = "<group>"; };
 		DAD5B3A72213AEAA0037AC8A /* List2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List2ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				DAD5B3AD2213C9E90037AC8A /* List2TableViewCell.swift */,
 				DAD5B3AF2213CE380037AC8A /* Sample3ViewController.swift */,
 				DAD5B3B32213E9F80037AC8A /* Sample4ViewController.swift */,
+				DA8AAD88221645D300FB0264 /* Sample5ViewController.swift */,
+				DA8AAD8C2216943100FB0264 /* Sample6ViewController.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -212,12 +218,14 @@
 				DA84DA70220BBA030036FE80 /* ViewController.swift in Sources */,
 				DAD5B3A62213A8A70037AC8A /* StackTableViewCell.swift in Sources */,
 				DA84DA88220BC18F0036FE80 /* MyStackViewCell.swift in Sources */,
+				DA8AAD8D2216943100FB0264 /* Sample6ViewController.swift in Sources */,
 				DAD5B3AE2213C9E90037AC8A /* List2TableViewCell.swift in Sources */,
 				DA84DA8E220BE7790036FE80 /* RankingStackViewCell.swift in Sources */,
 				DA84DA6E220BBA030036FE80 /* AppDelegate.swift in Sources */,
 				DA84DA8C220BE4F40036FE80 /* HorizontalViewController.swift in Sources */,
 				DAD5B3A82213AEAB0037AC8A /* List2ViewController.swift in Sources */,
 				DAD5B3AC2213B5F50037AC8A /* List2Cell.swift in Sources */,
+				DA8AAD89221645D300FB0264 /* Sample5ViewController.swift in Sources */,
 				DAD5B3B02213CE380037AC8A /* Sample3ViewController.swift in Sources */,
 				DAD5B3A42213A7480037AC8A /* ListViewController.swift in Sources */,
 				DA84DA83220BBC270036FE80 /* DynamicStackViewCell.swift in Sources */,

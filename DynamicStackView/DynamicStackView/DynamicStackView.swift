@@ -37,7 +37,6 @@ class DynamicStackView: UIStackView {
             }
         }
 
-//        removeAll()
         if cells.count > 0 , let cell = cells.first , cell.isHeader {
             self.header = cell
         }
@@ -50,7 +49,7 @@ class DynamicStackView: UIStackView {
     
     func addTerminalView() {
         let view = DynamicVerticalStackViewCell(frame: .zero)
-        view.height = 10
+        view.height = 0
         view.backgroundColor = .white
         insertLastView(view: view)
     }
@@ -173,7 +172,7 @@ extension UIStackView {
 
 extension UIStackView {
     func expectedHeight(when viewOfIndex:Int, isHidden:Bool) -> CGFloat {
-        var height = arrangedSubviews.filter { !$0.isHidden }.reduce(0, { $0 + $1.frame.height })
+        let height = arrangedSubviews.filter { !$0.isHidden }.reduce(0, { $0 + $1.frame.height })
         if isHidden && !arrangedSubviews[viewOfIndex].isHidden {
             return height - arrangedSubviews[viewOfIndex].frame.height
         }
